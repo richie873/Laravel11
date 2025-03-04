@@ -4,13 +4,13 @@
         <div class="flex items-center">
           <div class="shrink-0">
             {{-- <img class="size-8" src="https://tailwindui.com/plus/img/logos/mark.svg?color=indigo&shade=500" alt="Your Company"> --}}
-            <img class="size-8" src="https://tailwindui.com/plus-assets/img/logos/mark.svg?color=indigo&shade=500" alt="Your Company">
+            <a href="/"><img class="size-8" src="https://tailwindui.com/plus-assets/img/logos/mark.svg?color=indigo&shade=500" alt="Your Company"></a>
           </div>
           <div class="hidden md:block">
             <div class="ml-10 flex items-baseline space-x-4">
               <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
               <x-nav-link href="/" :active="request()->is('/')">Home</x-nav-link>
-              <x-nav-link href="/blog" :active="request()->is('blog')">Blog</x-nav-link>
+              <x-nav-link href="/posts" :active="request()->is('posts')">Blog</x-nav-link>
               <x-nav-link href="/about" :active="request()->is('about')">About</x-nav-link>
               <x-nav-link href="/contact" :active="request()->is('contact')">Contact</x-nav-link>              
             </div>
@@ -82,11 +82,15 @@
     <div :class="{'block': open, 'hidden': !open}" class="md:hidden" id="mobile-menu">
       <div class="space-y-1 px-2 pt-2 pb-3 sm:px-3">
         <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
-        <a href="#" class="block rounded-md bg-gray-900 px-3 py-2 text-base font-medium text-white" aria-current="page">Home</a>
-        <a href="#" class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Team</a>
-        <a href="#" class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Projects</a>
-        <a href="#" class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Calendar</a>
-        <a href="#" class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Reports</a>
+        <x-nav-link-mobile href="/" :active="request()->is('/')" class="block rounded-md bg-gray-900 px-3 py-2 text-base font-medium text-white" aria-current="page">Home</x-nav-link>
+        <x-nav-link-mobile href="/posts" :active="request()->is('posts')">Blog</x-nav-link>
+        <x-nav-link-mobile href="/about" :active="request()->is('about')">About</x-nav-link>
+        <x-nav-link-mobile href="/contact" :active="request()->is('contact')">Contact</x-nav-link>              
+          {{-- <a href="#" class="block rounded-md bg-gray-900 px-3 py-2 text-base font-medium text-white" aria-current="page">Home</a>
+          <a href="#" class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Team</a>
+          <a href="#" class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Projects</a>
+          <a href="#" class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Calendar</a>
+          <a href="#" class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Reports</a> --}}
       </div>
       <div class="border-t border-gray-700 pt-4 pb-3">
         <div class="flex items-center px-5">
